@@ -74,10 +74,10 @@ pokedexLimit: 25
 ```bash
 npm start
 ```
-### 4) Admin Credentials:
+### 3) Admin Credentials:
 ```text
 email: admin@example.com
 pass: password
 ```
 
-### 3) Enjoy!
+### 4) Enjoy!
