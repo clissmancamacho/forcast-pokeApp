@@ -1,5 +1,11 @@
 # POKEAPP FULL STACK MEAN
-
+---
+## Demo App: https://clissmancamacho.github.io/pokeApp/
+### Admin Credentials:
+```text
+email: admin@example.com
+pass: password
+```
 ---
 # BASIC STEPS
 ## 1) Clone Project
