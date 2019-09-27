@@ -1,0 +1,16 @@
+.container-horizontal {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.container-vertical {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.margin-left {
+  margin-left: 30% !important;
+}

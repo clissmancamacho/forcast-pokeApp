@@ -1,0 +1,50 @@
+<h1 class="center"><b>Detalles del Pokemon</b></h1>
+<div class="pull-left">
+    <button mat-button color="primary" (click)="back()">
+        <i class="material-icons">keyboard_backspace</i>
+        Atrás
+    </button>
+  </div>
+<div class="center" *ngIf="pokemon" >
+  <mat-card class="card large-card">
+    <mat-card-header>
+      <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+    </mat-card-header>
+    <div class="center">
+      <img class="pokemonImage" mat-card-image [src]="pokemon.sprites.front_default" alt="PokemonPhoto">
+      <img class="pokemonImage" mat-card-image [src]="pokemon.sprites.front_shiny" alt="PokemonPhoto">
+      <img class="pokemonImage" mat-card-image [src]="pokemon.sprites.back_default" alt="PokemonPhoto">
+    </div>
+    <mat-card-content>
+      <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Evoluciones">
+            <div class="container-horizontal" *ngIf="pokemonsEvolutions.length > 0" >
+              <div *ngFor="let pokemon of pokemonsEvolutions" >
+                <p class="margin-left"><b>{{ pokemon.name | titlecase }}</b></p>
+                <img class="pokemonImage" mat-card-image [src]="pokemon.sprites.front_default" alt="PokemonPhoto">
+              </div>
+            </div>
+            <div class="center" *ngIf="pokemonsEvolutions.length === 0">
+              <p><b>Información no disponible</b></p>
+            </div>
+          </mat-tab>
+          <mat-tab label="Información">
+            <div class="container-vertical">
+              <p>Altura: <b>{{ pokemon.height }}</b></p>
+              <p>Peso: <b>{{ pokemon.weight }}</b></p>
+            </div>
+            <div class="container-horizontal">
+              <p>Habilidades: </p>
+              <mat-chip-list>
+                <mat-chip color="accent" selected *ngFor="let data of pokemon.abilities">{{ data.ability.name | titlecase }}</mat-chip>
+              </mat-chip-list>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      <!-- <mat-chip-list>
+        <mat-chip *ngFor="let data of pokemon.types" >{{ data.type.name | titlecase }}</mat-chip>
+      </mat-chip-list> -->
+    </mat-card-content>
+  </mat-card>
+</div>
+

@@ -1,0 +1,66 @@
+<div class="full-height" *ngIf="!loading" >
+  <div class="container center">
+      <mat-card class="card card-auth">
+          <div class="center">
+            <img id="logo" src="assets/imgs/pokeball.svg">
+          </div>
+          <mat-card-content>
+            <form class="form center" [formGroup]="signupForm">
+              <table cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field>
+                    <input matInput placeholder="Nombre" type=text formControlName="firstName" name="firstName" id="firstName"
+                    required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                    <input matInput placeholder="Apellido" type=text formControlName="lastName" name="lastName" id="lastName"
+                    required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                    <input matInput placeholder="Correo" type=email formControlName="email" name="email" id="email"
+                    required>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <input matInput placeholder="Contraseña" formControlName="password" type="password" name="password" required>
+                    </mat-form-field>
+                  </td>
+              </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <input matInput placeholder="Repetir Contraseña" formControlName="passwordRepeat" type="password" name="passwordRepeat" required>
+                    </mat-form-field>
+                  </td>
+              </tr>
+            </table>
+            </form>
+            <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+          </mat-card-content>
+          <mat-card-actions class="center">
+            <button mat-raised-button (click)="onSubmit()" color="primary">Continuar</button>
+          </mat-card-actions>
+        </mat-card>
+  </div>
+</div>
+
+<div class="center center-vertical" *ngIf="loading" >
+    <mat-progress-spinner
+    class="example-margin"
+    color="primary"
+    mode="indeterminate"
+    >
+</mat-progress-spinner>
+</div>

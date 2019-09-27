@@ -1,0 +1,44 @@
+<h1 class="center">Pokedex</h1>
+
+<div *ngIf="!displayGrid" >
+  <div class="pull-right" *ngIf="userRol === 'admin'" >
+    <button mat-button (click)="changeDisplayGrid()">
+        <i class="material-icons">list_alt</i>
+        Resumen
+    </button>
+  </div>
+
+  <div class="center">
+    <div class="field-container">
+      <mat-form-field class="full-width">
+        <input matInput type="search" placeholder="Buscar..." [(ngModel)]="searchTerm">
+      </mat-form-field>
+    </div>
+  </div>
+  
+  <div class="grid-container">
+    <app-pokemon
+      class="item" 
+      *ngFor="let pokemon of pokemons | filter: searchTerm:'name'"
+      [pokemon]="pokemon"
+      (clickPokemon)="listenToClickPokemon($event)">
+    </app-pokemon>
+  </div>
+</div>
+
+<div *ngIf="displayGrid && userRol === 'admin'" >
+  <div class="pull-right">
+    <button mat-button (click)="changeDisplayGrid()">
+        <i class="material-icons">grid_on</i>
+        Cards
+    </button>
+  </div>
+
+  <div class="center">
+    <app-resume-table 
+      [columnDefs]="gridColumns" 
+      [rowData]="gridRows">
+    </app-resume-table>
+  </div>
+
+</div>

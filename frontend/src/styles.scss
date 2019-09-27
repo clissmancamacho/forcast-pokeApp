@@ -1,0 +1,157 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-material.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+body {
+  margin: 0 !important;
+}
+
+main {
+  position: relative;
+}
+
+.container {
+  margin: 4% 4% 4% 4%;
+}
+
+.center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.center-vertical {
+  height: 100vh !important;
+}
+
+.card {
+  max-width: 400px;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  width: 300px !important;
+  height: auto !important;
+  cursor: pointer;
+}
+
+.large-card {
+  height: auto !important;
+  width: 500px !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+#logo {
+  width: 130px !important;
+  height: 100px !important;
+}
+
+.pokemonImage {
+  width: auto !important;
+  height: 150px !important;
+}
+
+.pull-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5% !important;
+}
+.pull-left {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 27% !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+
+/* Media Querys */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  .card {
+    width: 75vw !important;
+  }
+
+  .card-auth {
+    width: 75vw !important;
+    margin: 0px 15px 0px 15px;
+  }
+
+  .full-height {
+    display: flex;
+    height: 100vh !important;
+  }
+
+  .field-container {
+    width: 50vw !important;
+  }
+
+  .grid-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr !important;
+    grid-gap: 2em !important;
+  
+    margin-right: 8% !important;
+  }
+
+  .large-card {
+    height: auto !important;
+    width: 88vw !important;
+  }
+  
+  .pull-left {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 3% !important;
+  }
+
+}
+
+  /* iPads (portrait) ----------- */
+  @media only screen 
+  and (min-device-width : 768px) 
+  and (max-device-width : 1024px) and (orientation : portrait) {
+    .grid-container {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr 1fr !important;
+      grid-gap: 2em !important;
+    
+      margin-left: 3% !important;
+    }
+
+    .pull-left {
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 10% !important;
+    }
+  }
+
+  /* iPads (landscape) ----------- */
+  @media only screen 
+  and (min-device-width : 768px) 
+  and (max-device-width : 1024px) and (orientation : landscape) {
+    .grid-container {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-rows: 1fr 1fr !important;
+      grid-gap: 1.5em !important;
+    
+      margin-left: 10% !important;
+    }
+    
+    .pull-left {
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 20% !important;
+    }
+  }

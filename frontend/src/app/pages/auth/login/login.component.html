@@ -1,0 +1,43 @@
+<div class="full-height" *ngIf="!loading" >
+  <div class="container center">
+    <mat-card class="card card-auth">
+      <div class="center">
+        <img id="logo" src="assets/imgs/pikachu.svg">
+      </div>
+      <mat-card-content>
+        <form class="form center" [formGroup]="loginForm">
+          <table cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field>
+                <input matInput placeholder="Correo" type=email formControlName="email" name="email" id="email"
+                required>
+                </mat-form-field>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <mat-form-field>
+                  <input matInput placeholder="Contraseña" formControlName="password" type="password" name="password" required>
+                </mat-form-field>
+              </td>
+          </tr>
+        </table>
+        </form>
+        <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+      </mat-card-content>
+      <mat-card-actions class="center">
+        <button mat-raised-button (click)="onSubmit()" color="primary">Iniciar Sesión</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<div class="center center-vertical" *ngIf="loading" >
+    <mat-progress-spinner
+    class="example-margin"
+    color="primary"
+    mode="indeterminate"
+    >
+</mat-progress-spinner>
+</div>

@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <span class="pointer">PokeApp</span>
+        <span class="example-fill-remaining-space"></span>
+        <span class="align-center"></span>
+        <span class="example-spacer"></span>
+        <div *ngIf="!authService.isAuthenticated()" >
+            <button mat-button routerLink="auth/login">
+              <i class="material-icons">vpn_key</i>
+              Iniciar Sesión
+            </button>
+            <button mat-button routerLink="auth/signup">
+                <i class="material-icons">person_add</i>
+                Registrate
+            </button>
+        </div>
+        <div class="center" *ngIf="authService.isAuthenticated()" >
+            <button mat-button (click)="logout()">
+              <i class="material-icons">close</i>
+              Cerrar Sesión
+            </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
